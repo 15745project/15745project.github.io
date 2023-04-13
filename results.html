@@ -263,7 +263,82 @@ $(document).ready(function () {
 </div>
 
 
-<p>Experimental results will be posted here as experiments are completed.</p>
+<div id="performance-impact-of-loop-hardening" class="section level3">
+<h3>Performance impact of loop hardening</h3>
+<p>Loop hardening strategically inserts duplicate instructions to detect irregularities in the execution (perhaps caused by some sort of malicious outside interference). This incurrs a performance overhead. This table illustrates this performance impact on a variety of real-world programs (taken from <a href="https://www.gnu.org/software/coreutils/">GNU coreutils</a>).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Program</th>
+<th align="center">Hardened</th>
+<th align="center">Mean (ms)</th>
+<th align="center">Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">wc</td>
+<td align="center">Yes</td>
+<td align="center">1.7</td>
+<td align="center">0.5</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">No</td>
+<td align="center">1.1</td>
+<td align="center">0.4</td>
+</tr>
+<tr class="odd">
+<td align="center">uniq</td>
+<td align="center">Yes</td>
+<td align="center">0.6</td>
+<td align="center">0.4</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">No</td>
+<td align="center">0.1</td>
+<td align="center">0.5</td>
+</tr>
+<tr class="odd">
+<td align="center">readlink</td>
+<td align="center">Yes</td>
+<td align="center">2.6</td>
+<td align="center">0.4</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">No</td>
+<td align="center">2.0</td>
+<td align="center">0.8</td>
+</tr>
+<tr class="odd">
+<td align="center">cat</td>
+<td align="center">Yes</td>
+<td align="center">1.5</td>
+<td align="center">0.6</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">No</td>
+<td align="center">1.4</td>
+<td align="center">0.2</td>
+</tr>
+<tr class="odd">
+<td align="center">basename</td>
+<td align="center">Yes</td>
+<td align="center">3.5</td>
+<td align="center">0.2</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">No</td>
+<td align="center">2.5</td>
+<td align="center">0.3</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 
